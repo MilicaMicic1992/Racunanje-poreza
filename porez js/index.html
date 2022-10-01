@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porez JS</title>
+</head>
+<body>
+    <p>Cena: <br/>
+    <input id="cena" type="text"></p>
+    <p>Porez: <br/>
+    <input id="porez" type="text">%</p>
+    <p><button id="izracunaj" >Izracunaj</button></p>
+    <p><b>Cena sa porezom:</b> <span id="obracun"></span> </p>
+
+
+    <script>
+        function obracun_cene(){
+            const input_cena = document.getElementById("cena")
+            const input_porez = document.getElementById("porez")
+            const span_obracun = document.getElementById("obracun")
+            const cena = Number(input_cena.value)
+            const porez = Number(input_porez.value) / 100
+            span_obracun.innerHTML = cena * (1 + porez)
+        }
+
+
+        const button_izracunaj = document.getElementById("izracunaj")
+        button_izracunaj.onclick = obracun_cene
+
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>
